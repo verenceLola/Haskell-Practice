@@ -11,7 +11,9 @@
         let
           pkgs = import nixpkgs {
             inherit system;
-            config.allowUnfree = true;
+            config = {
+              allowBroken = false;
+            };
           };
         in
         with pkgs; {
@@ -19,6 +21,10 @@
             LC_ALL = "C.UTF-8";
             buildInputs = [
               haskell.compiler.native-bignum.ghc982
+              # haskellPackages.ghcup # broken
+              haskellPackages.cabal-install
+              vscode-extensions.haskell.haskell
+              vscode-extensions.justusadam.language-haskell
             ];
           };
         }
