@@ -33,7 +33,7 @@ antarcticPenguin _ = False
 antarcticOrGalapos :: Penguin -> Bool
 antarcticOrGalapos p = galaposPenguin p || antarcticPenguin p
 
-funZ z = case x + 1 == 1 of
+funZ x = case x + 1 == 1 of
   True -> "AWESOME"
   False -> "wut"
 
