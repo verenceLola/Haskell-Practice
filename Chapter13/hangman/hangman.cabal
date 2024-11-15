@@ -1,0 +1,28 @@
+cabal-version:      3.0
+name:               hangman
+version:            0.1.0.0
+synopsis:           Hangman Game
+description:        Hangman Game Practicing Modules
+homepage:           https://app.gitlab.verencelola.home/verencelola/haskell
+license:            GPL-2.0-only
+license-file:       LICENSE
+author:             Vincent Onyango
+maintainer:         me@verencelola.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+extra-source-files: data/dict.txt
+
+common warnings
+    ghc-options: -Wall
+
+executable hangman
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base >=4.17.2.1
+                    , random == 1.2.1.2
+                    , split == 0.2.5
+    hs-source-dirs:   app
+    default-language: GHC2021
