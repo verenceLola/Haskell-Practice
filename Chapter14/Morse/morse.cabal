@@ -1,0 +1,48 @@
+cabal-version:      3.0
+name:               morse
+version:            0.1.0.0
+synopsis:           Morse Code
+description:        Morse Code Test Practice
+homepage:           https://app.gitlab.verencelola.home/verenceLola/haskell
+license:            GPL-3.0-only
+license-file:       LICENSE
+author:             Vincent Onyango
+maintainer:         me@verencelola.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall -fwarn-tabs
+
+library
+    exposed-modules:    Morse
+    ghc-options:        -Wall -fwarn-tabs
+    build-depends:      base ^>=4.20.0.0
+                       , containers
+                       , QuickCheck
+    hs-source-dirs:     app
+    default-language:   GHC2024
+
+executable morse
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:    Morse
+    -- other-extensions:
+    build-depends:    base ^>=4.20.0.0
+                    , containers
+                    , QuickCheck
+    hs-source-dirs:   app
+    default-language: GHC2024
+
+test-suite tests
+    ghc-options:    -Wall -fno-warn-orphans
+    type:           exitcode-stdio-1.0
+    main-is:        test.hs
+    hs-source-dirs: tests
+    build-depends:  base
+                   , containers
+                   , morse
+                   , QuickCheck
+    default-language: GHC2024
