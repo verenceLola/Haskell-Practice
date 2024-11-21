@@ -39,7 +39,7 @@ executable morse
 test-suite tests
     ghc-options:    -Wall -fno-warn-orphans
     type:           exitcode-stdio-1.0
-    main-is:        test.hs
+    main-is:        tests.hs
     hs-source-dirs: tests
     build-depends:  base
                    , containers
