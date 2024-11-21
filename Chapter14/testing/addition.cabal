@@ -1,0 +1,28 @@
+cabal-version:      3.0
+name:               addition
+version:            0.1.0.0
+-- synopsis:
+-- description:
+homepage:           https://app.gitlab.verencelola.com/verenceLola/haskell
+license:            GPL-3.0-only
+license-file:       LICENSE
+author:             Vincent Onyango
+maintainer:         me@verencelola.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall -fwarn-tabs
+
+library
+    import:           warnings
+    main-is:          Main.hs
+    exposed-modules:   Addition
+    -- other-extensions:
+    build-depends:    base ^>=4.20.0.0
+                      , hspec ^>=2.11.10
+                      , QuickCheck
+    hs-source-dirs:   app
+    default-language: GHC2024
