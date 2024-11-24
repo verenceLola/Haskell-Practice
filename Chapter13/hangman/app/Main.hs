@@ -58,7 +58,6 @@ charInWord (Puzzle puzzleWord _ _) word =  word `elem` puzzleWord
 alreadyGuessed :: Puzzle -> Char -> Bool
 alreadyGuessed (Puzzle _ _ guessed) word = word `elem` guessed
 
-
 renderPuzzleChar :: Maybe Char -> Char
 renderPuzzleChar a = case a of
   (Just c) -> c
